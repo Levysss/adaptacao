@@ -10,6 +10,7 @@ public class PlayerControler : MonoBehaviour
     public GameObject roda1;
     public GameObject roda2;
     public GameObject canhao;
+    public GameObject bocaCanhao;
     public bool jogando;
     public GameObject minhaBala;
     public GameObject mira;
@@ -32,7 +33,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (jogando)
         {
-            Instantiate(minhaBala, canhao.transform.position, canhao.transform.rotation);
+            Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);
         }
     }
 

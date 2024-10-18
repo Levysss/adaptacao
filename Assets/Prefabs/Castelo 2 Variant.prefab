@@ -84,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8628426408518854381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8196172099725829049}
+  m_Layer: 0
+  m_Name: Boca
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8196172099725829049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628426408518854381}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8992261625755043033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4618933771886960603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,8 +124,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8144545897196449, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_Name
+      value: canhaoRev
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144545897196449, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_TagString
       value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 591946344270543902, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_Size.y
+      value: 0.13038307
+      objectReference: {fileID: 0}
+    - target: {fileID: 591946344270543902, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.054754417
       objectReference: {fileID: 0}
     - target: {fileID: 591946344270543902, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -272,6 +315,10 @@ PrefabInstance:
       propertyPath: minhaBala
       value: 
       objectReference: {fileID: 2242362525013703941, guid: 35a0533e2f5cb524ea2bece58f129df7, type: 3}
+    - target: {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: bocaCanhao
+      value: 
+      objectReference: {fileID: 8628426408518854381}
     - target: {fileID: 8043012637580173219, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -297,6 +344,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4382936494585748226, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8621421385109279034}
+    - targetCorrespondingSourceObject: {fileID: 4382936494585748226, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8196172099725829049}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6444025040697156980, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       insertIndex: -1
