@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,9 @@ public class GameController : MonoBehaviour
     public PlayerControler p1;
     public PlayerControler p2;
     public GameObject can;
+    public TextMeshProUGUI contagem;
+
+    float deley = 3.5f;
 
     void Start()
     {
@@ -64,12 +68,29 @@ public class GameController : MonoBehaviour
         if (p1.jogou)
         {
             p1.jogando = false;
+            while (deley>0)
+            {
+                deley = deley - Time.deltaTime;
+                int numero = (int)deley;
+                contagem.text = numero.ToString();
+
+            }
+            deley = 3.5f;
             p2.jogando = true;
             p1.jogou = false;
         }
         else if (p2.jogou)
         {
             p2.jogando = false;
+            while (deley > 0)
+            {
+                Debug.Log("Entrou");
+                deley = deley - Time.deltaTime;
+                int numero = (int)deley;
+                contagem.text = numero.ToString();
+
+            }
+            deley = 3.5f;
             p1.jogando = true;
             p2.jogou = false;
         }
