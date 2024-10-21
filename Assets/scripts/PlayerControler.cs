@@ -16,10 +16,12 @@ public class PlayerControler : MonoBehaviour
     public GameObject minhaBala;
     public GameObject mira;
     public Vector2 direcao;
+    
+
 
     public bool jogou = false;
     
-    float deslocamento = 5;
+    float deslocamento = 10;
     float speed = 100;
 
 
@@ -38,7 +40,10 @@ public class PlayerControler : MonoBehaviour
         {
             
             Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);
-            jogou = true;
+            
+                jogou = true;
+            
+            
         }
         
     }
@@ -96,7 +101,7 @@ public class PlayerControler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         vida -= 5;
-        if(vida < 0)
+        if(vida <= 0)
         {
             //Destroy(gameObject);
             SceneManager.LoadScene("Game");

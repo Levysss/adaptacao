@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f12d7e15a94b8143bf5f60923d36ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagInimigo: P1
 --- !u!50 &-6343506912281650724
 Rigidbody2D:
   serializedVersion: 4
@@ -147,7 +146,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0.92387956, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7236650602712465376}

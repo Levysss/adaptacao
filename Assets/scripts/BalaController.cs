@@ -6,7 +6,7 @@ public class BalaController : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody2D myRb;
-    private float speed = 20;
+    private float speed = 35;
 
     void Start()
     {

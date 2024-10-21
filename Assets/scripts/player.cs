@@ -103,7 +103,7 @@ public partial class @Player: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""WASD"",
+                    ""name"": ""Setas"",
                     ""id"": ""aff79b6c-6e73-475f-923a-c89a65311162"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
