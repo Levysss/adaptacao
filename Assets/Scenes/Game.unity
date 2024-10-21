@@ -122,17 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &336723234 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2537342069112878918, guid: a03ebc4964d67434b851090cba429182, type: 3}
-  m_PrefabInstance: {fileID: 3246264728755004385}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c602630545ecfe54c8435fb57726fc16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +383,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1811870389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8776447344493248530, guid: a03ebc4964d67434b851090cba429182, type: 3}
+  m_PrefabInstance: {fileID: 3246264728755004385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c602630545ecfe54c8435fb57726fc16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977327665
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p1: {fileID: 811407446}
-  p2: {fileID: 336723234}
+  p2: {fileID: 1811870389}
   can: {fileID: 519420028}
 --- !u!1001 &1167799254080889626
 PrefabInstance:
@@ -506,6 +506,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 289784236484245026, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1811870389}
+    - target: {fileID: 289784236484245026, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1811870389}
+    - target: {fileID: 289784236484245026, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setDeslomento
+      objectReference: {fileID: 0}
+    - target: {fileID: 289784236484245026, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setAtirar
+      objectReference: {fileID: 0}
     - target: {fileID: 1863882048676848408, guid: a03ebc4964d67434b851090cba429182, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.92

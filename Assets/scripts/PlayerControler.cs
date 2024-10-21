@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class PlayerControler : MonoBehaviour
     public GameObject minhaBala;
     public GameObject mira;
     public Vector2 direcao;
-    
+
+    public bool jogou = false;
     
     float deslocamento = 5;
     float speed = 100;
@@ -27,19 +29,23 @@ public class PlayerControler : MonoBehaviour
     public void setDeslomento(InputAction.CallbackContext valui) 
     {
         movimento = valui.ReadValue<Vector2>();
-        // Vector3 posicaoRoda = valui.ReadValue<Vector3>(); 
+         
     }
     public void setAtirar()
     {
-        if (jogando)
+        
+        if (jogando&&!jogou)
         {
+            
             Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);
+            jogou = true;
         }
+        
     }
 
     private void FixedUpdate()
     {
-        if (jogando == true)
+        if (jogando == false)
         {
             Vector3 movie = new Vector3(movimento.x, 0, 0) * Time.fixedDeltaTime * deslocamento;
             transform.Translate(movie);
@@ -61,25 +67,30 @@ public class PlayerControler : MonoBehaviour
 
     private void Update()
     {
+        
+
+        
         if (jogando == true)
         {
-            direcao = mira.transform.position;
-            mira.SetActive(true);
+            
+            mira.SetActive(false);
+            
+
+            
+        }
+        else if(jogando == false)
+        {
             roda1.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime);
 
 
             roda2.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime);
+            direcao = mira.transform.position;
 
             controleCanhao();
+            mira.SetActive(true);
         }
-        else
-        {
-            mira.SetActive(false);
-        }
+
         
-
-
-
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -87,7 +98,8 @@ public class PlayerControler : MonoBehaviour
         vida -= 5;
         if(vida < 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            SceneManager.LoadScene("Game");
         }
     }
 

@@ -236,9 +236,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2537342069112878918}
+      objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -337,9 +341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4861653356070476979, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+    - {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3470977665156430278, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
     - {fileID: 8649952274424309141, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+    - {fileID: 3097502272935779341, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4382936494585748226, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       insertIndex: -1
@@ -348,6 +354,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8196172099725829049}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8887431389882850009, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8776447344493248530}
     - targetCorrespondingSourceObject: {fileID: 6444025040697156980, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7462540253977212006}
@@ -378,20 +387,46 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2537342069112878918 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+--- !u!1 &4273845720412259586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8887431389882850009, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
   m_PrefabInstance: {fileID: 4618933771886960603}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &8776447344493248530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4273845720412259586}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c602630545ecfe54c8435fb57726fc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 20
+  roda1: {fileID: 7705965187079732305}
+  roda2: {fileID: 7134067244738053014}
+  canhao: {fileID: 4613182044781917306}
+  bocaCanhao: {fileID: 8628426408518854381}
+  jogando: 0
+  minhaBala: {fileID: 2242362525013703941, guid: 35a0533e2f5cb524ea2bece58f129df7, type: 3}
+  mira: {fileID: 4659410101945148854}
+  direcao: {x: 0, y: 0}
+  jogou: 0
 --- !u!1 &4613182044781917306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8144545897196449, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+  m_PrefabInstance: {fileID: 4618933771886960603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7134067244738053014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2529039022450023501, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+  m_PrefabInstance: {fileID: 4618933771886960603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7705965187079732305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3091907276815557514, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
   m_PrefabInstance: {fileID: 4618933771886960603}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8992261625755043033 stripped
