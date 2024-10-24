@@ -1,59 +1,72 @@
-using System.Collections;
 using TMPro;
-using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
     public PlayerControler p1;
     public PlayerControler p2;
-    public GameObject can;
+    public GameObject can;  // Referência à câmera ou ao objeto que a controla
     public TextMeshProUGUI contagem;
     public TextMeshProUGUI vida1;
     public TextMeshProUGUI vida2;
 
+    private BalaController minhaBala;  // Referência à bala ativa
+    private bool seguindoBala = false;  // Flag para indicar se a câmera está seguindo a bala
     float deley = 3;
-    private bool podeAtirar = false; // Flag para controlar o tiro
+    private bool podeAtirar = false;
 
     void Start()
     {
-        // Define aleatoriamente quem começa
+        // Decide quem começa primeiro
         if (Random.Range(0, 2) == 0)
         {
-            StartCoroutine(deleyTroca());
-            p1.jogando = true;
-            p2.jogando = false;
-            p1.jogou = true;
-            p2.jogou = false;
+            p2.jogando = true;
+            p1.jogando = false;
         }
         else
         {
-            StartCoroutine(deleyTroca());
-            p1.jogando = false;
-            p2.jogando = true;
-            p1.jogou = false;
-            p2.jogou = true;
+            p1.jogando = true;
+            p2.jogando = false;
         }
+
+        StartCoroutine(deleyTroca());
     }
 
     void Update()
     {
-        seguirPlayer();
+        if (seguindoBala && minhaBala != null)
+        {
+            // Segue a bala se ela ainda existir
+            can.transform.position = new Vector3(minhaBala.transform.position.x, minhaBala.transform.position.y, -5);
+        }
+        else
+        {
+            // Se a bala for destruída, volta a seguir o jogador
+            seguindoBala = false;
+            seguirPlayer();
+        }
     }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed && podeAtirar) // Verifica se pode atirar
+        if (context.performed && podeAtirar)
         {
-            if (p2.jogando)
+            if (p1.jogando)
             {
                 p1.setAtirar();
+                minhaBala = p1.GetBala();  // Obtém a referência à bala recém-criada
+                seguindoBala = true;  // Ativa a flag para seguir a bala
+                trocarJogador();
             }
-            else if (p1.jogando)
+            else if (p2.jogando)
             {
                 p2.setAtirar();
+                minhaBala = p2.GetBala();  // Obtém a referência à bala recém-criada
+                seguindoBala = true;  // Ativa a flag para seguir a bala
+                trocarJogador();
             }
-            trocarJogador();
         }
     }
 
@@ -61,22 +74,21 @@ public class GameController : MonoBehaviour
     {
         if (p1.jogando)
         {
-            vida1.text = " ";
-            vida2.text = "Vida: " + p2.vida;
-            
-            can.transform.position = new Vector3(p2.canhao.transform.position.x-15, p2.canhao.transform.position.y, -20);
+            vida1.text = "Vida: " + p1.vida;
+            vida2.text = " ";
+            can.transform.position = new Vector3(p1.canhao.transform.position.x + 15, p1.canhao.transform.position.y, -20);
         }
         else if (p2.jogando)
         {
-            vida2.text = " ";
-            vida1.text = "Vida: " + p1.vida;
-            can.transform.position = new Vector3(p1.canhao.transform.position.x+15, p1.canhao.transform.position.y, -20);
+            vida2.text = "Vida: " + p2.vida;
+            vida1.text = " ";
+            can.transform.position = new Vector3(p2.canhao.transform.position.x - 15, p2.canhao.transform.position.y, -20);
         }
     }
 
     IEnumerator deleyTroca()
     {
-        podeAtirar = false; // Desativa a habilidade de atirar
+        podeAtirar = false;
         float tempoRestante = deley;
         while (tempoRestante > 0)
         {
@@ -88,23 +100,22 @@ public class GameController : MonoBehaviour
         contagem.text = "Vai!";
         yield return new WaitForSeconds(0.5f);
         contagem.text = "";
-        podeAtirar = true; // Ativa a habilidade de atirar ao fim da contagem
+        podeAtirar = true;
     }
 
     void trocarJogador()
     {
-        StartCoroutine(deleyTroca()); // Inicia a contagem para a troca
-        if (p1.jogou)
+        if (p1.jogando)
         {
             p1.jogando = false;
             p2.jogando = true;
-            p1.jogou = false;
         }
-        else if (p2.jogou)
+        else if (p2.jogando)
         {
             p2.jogando = false;
             p1.jogando = true;
-            p2.jogou = false;
         }
+
+        StartCoroutine(deleyTroca());
     }
 }

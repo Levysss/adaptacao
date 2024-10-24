@@ -8,18 +8,22 @@ public class PlayerControler : MonoBehaviour
 {
     public int vida = 20;
     private Rigidbody2D rb;
+
     public GameObject roda1;
     public GameObject roda2;
     public GameObject canhao;
     public GameObject bocaCanhao;
+
     public bool jogando;
+
     public GameObject minhaBala;
+    public GameObject balaAtiva;
     public GameObject mira;
     public Vector2 direcao;
     
 
 
-    public bool jogou = false;
+    public bool jogou;
     
     float deslocamento = 10;
     float speed = 100;
@@ -28,7 +32,7 @@ public class PlayerControler : MonoBehaviour
 
 
     Vector2 movimento;
-    public void setDeslomento(InputAction.CallbackContext valui) 
+    public void setDeslocamento(InputAction.CallbackContext valui) 
     {
         movimento = valui.ReadValue<Vector2>();
          
@@ -36,21 +40,26 @@ public class PlayerControler : MonoBehaviour
     public void setAtirar()
     {
         
-        if (jogando&&!jogou)
+        if (jogando && !jogou)
         {
             
-            Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);
-            
-                jogou = true;
-            
-            
+            balaAtiva = Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);  
         }
         
     }
+    public BalaController GetBala()
+    {
+        if (balaAtiva != null)
+        {
+            return balaAtiva.GetComponent<BalaController>();
+        }
+        return null;
+    }
+
 
     private void FixedUpdate()
     {
-        if (jogando == false)
+        if (jogando)
         {
             Vector3 movie = new Vector3(movimento.x, 0, 0) * Time.fixedDeltaTime * deslocamento;
             transform.Translate(movie);
@@ -75,15 +84,13 @@ public class PlayerControler : MonoBehaviour
         
 
         
-        if (jogando == true)
+        if (jogando == false)
         {
             
             mira.SetActive(false);
-            
 
-            
         }
-        else if(jogando == false)
+        else
         {
             roda1.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime);
 
@@ -94,12 +101,17 @@ public class PlayerControler : MonoBehaviour
             controleCanhao();
             mira.SetActive(true);
         }
+        
 
         
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("rio"))
+        {
+            vida = -99999999;
+        }
         vida -= 5;
         if(vida <= 0)
         {

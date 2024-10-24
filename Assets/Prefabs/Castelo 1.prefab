@@ -915,7 +915,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7147156396193097885}
         m_TargetAssemblyTypeName: PlayerControler, Assembly-CSharp
-        m_MethodName: setDeslomento
+        m_MethodName: setDeslocamento
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -996,3 +996,4 @@ MonoBehaviour:
   minhaBala: {fileID: 2242362525013703941, guid: 0b949f251da6f9742a1032e95d21b61f, type: 3}
   mira: {fileID: 8649952274424309141}
   direcao: {x: 0, y: 0}
+  jogou: 0

@@ -5,13 +5,19 @@ using UnityEngine;
 public class BalaController : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private float speed = 35;
     private Rigidbody2D myRb;
-    private float speed = 35;
+    public Vector3 minhaPosicao;
+
 
     void Start()
     {
         myRb = GetComponent<Rigidbody2D>();
 
+    }
+    private void Update()
+    {
+        minhaPosicao = transform.position;
     }
 
     // Update is called once per frame
