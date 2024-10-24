@@ -7,13 +7,13 @@ public class GameController : MonoBehaviour
 {
     public PlayerControler p1;
     public PlayerControler p2;
-    public GameObject can;  // Referência à câmera ou ao objeto que a controla
+    public GameObject can;  
     public TextMeshProUGUI contagem;
     public TextMeshProUGUI vida1;
     public TextMeshProUGUI vida2;
 
-    private BalaController minhaBala;  // Referência à bala ativa
-    private bool seguindoBala = false;  // Flag para indicar se a câmera está seguindo a bala
+    private BalaController minhaBala;  
+    private bool seguindoBala = false;  
     float deley = 3;
     private bool podeAtirar = false;
 
@@ -56,15 +56,15 @@ public class GameController : MonoBehaviour
             if (p1.jogando)
             {
                 p1.setAtirar();
-                minhaBala = p1.GetBala();  // Obtém a referência à bala recém-criada
-                seguindoBala = true;  // Ativa a flag para seguir a bala
+                minhaBala = p1.GetBala();  
+                seguindoBala = true;  
                 trocarJogador();
             }
             else if (p2.jogando)
             {
                 p2.setAtirar();
-                minhaBala = p2.GetBala();  // Obtém a referência à bala recém-criada
-                seguindoBala = true;  // Ativa a flag para seguir a bala
+                minhaBala = p2.GetBala();  
+                seguindoBala = true;  
                 trocarJogador();
             }
         }
