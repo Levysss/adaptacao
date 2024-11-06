@@ -20,7 +20,10 @@ public class PlayerControler : MonoBehaviour
     public GameObject balaAtiva;
     public GameObject mira;
     public Vector2 direcao;
+    private float energia = 1;
+    private float gazoza = 20;
     
+
 
 
     public bool jogou;
@@ -39,7 +42,8 @@ public class PlayerControler : MonoBehaviour
     }
     public void setAtirar()
     {
-        
+        gazoza = 20;
+        energia = 1;
         if (jogando && !jogou)
         {
             
@@ -61,7 +65,18 @@ public class PlayerControler : MonoBehaviour
     {
         if (jogando)
         {
-            Vector3 movie = new Vector3(movimento.x, 0, 0) * Time.fixedDeltaTime * deslocamento;
+
+            if (movimento.x != 0)
+            {
+                gazoza -=movimento.x;
+                if(gazoza <= 0) 
+                {
+                    energia = 0;
+                }
+            }
+
+
+            Vector3 movie = new Vector3(movimento.x, 0, 0) * Time.fixedDeltaTime * deslocamento*energia;
             transform.Translate(movie);
         }
         
@@ -92,10 +107,10 @@ public class PlayerControler : MonoBehaviour
         }
         else
         {
-            roda1.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime);
+            roda1.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime *energia);
 
 
-            roda2.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime);
+            roda2.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime * energia);
             direcao = mira.transform.position;
 
             controleCanhao();

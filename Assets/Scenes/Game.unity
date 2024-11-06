@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 101221237}
   - component: {fileID: 101221236}
   m_Layer: 5
-  m_Name: Vida 2
+  m_Name: Vida 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,11 +154,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 942026700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.13072917, y: 0.89259267}
-  m_AnchorMax: {x: 0.13072917, y: 0.89259267}
-  m_AnchoredPosition: {x: 0, y: 44}
-  m_SizeDelta: {x: 99, y: 100}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 50}
+  m_SizeDelta: {x: 260, y: 100}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &101221236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -53.281433, y: 13.75, z: 12.133179, w: 25.781372}
+  m_margin: {x: 0.8599396, y: 0.8031006, z: -0.81362915, w: -0.11230469}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 972219332}
   - component: {fileID: 972219331}
   m_Layer: 5
-  m_Name: Vida 1
+  m_Name: Vida 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,11 +1354,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 942026700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8821042, y: 0.89259267}
-  m_AnchorMax: {x: 0.8821042, y: 0.89259267}
-  m_AnchoredPosition: {x: 101.5, y: 30.5}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -50, y: 50}
+  m_SizeDelta: {x: 260, y: 100}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &972219331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.869751, y: 0, z: 43.48999, w: 0}
+  m_margin: {x: 0.869751, y: 0, z: 0.7635498, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1766,7 +1766,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 49a957742f84be14a88bfab077c445af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: fd268b59c3c82ca418199e02da23b09e, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: b6cfa53c29470ff4b87eb14cc2543919, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -1925,10 +1925,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bb512dc6-9db1-4346-b9f0-d82d843b2532
-    m_ActionName: Jogador/movimento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1977327667}
@@ -1943,11 +1939,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0023af5c-acaa-412a-8f40-0b7e5105e74e
-    m_ActionName: Jogador/atirar[/Keyboard/space]
+    m_ActionId: 6f0ace6f-2b06-4b0e-a880-f5e43b863824
+    m_ActionName: Game/Atack1[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Jogador
+  m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &2001340777
@@ -2030,7 +2026,7 @@ GameObject:
   - component: {fileID: 2030889273}
   - component: {fileID: 2030889272}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2050,11 +2046,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 942026700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: 0}
-  m_SizeDelta: {x: 963.4667, y: 289.9627}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -27, y: -2}
+  m_SizeDelta: {x: 965.4667, y: 289.9627}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2030889272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2102,8 +2098,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 290
-  m_fontSizeBase: 290
+  m_fontSize: 160
+  m_fontSizeBase: 160
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2138,7 +2134,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.676422, y: 0, z: 1.7070923, w: 0}
+  m_margin: {x: 186.46344, y: 0, z: 131.17633, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2160,6 +2156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 591946344270543902, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -2269,8 +2269,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castelo 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8776447344493248530, guid: a03ebc4964d67434b851090cba429182, type: 3}
-      propertyPath: jogando
+    - target: {fileID: 5201301170042610629, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

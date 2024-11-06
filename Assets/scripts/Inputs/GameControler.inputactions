@@ -1,0 +1,34 @@
+{
+    "name": "GameControler",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "3ff8ead2-9062-4be9-a824-6c748dc30673",
+            "actions": [
+                {
+                    "name": "Atack1",
+                    "type": "Button",
+                    "id": "6f0ace6f-2b06-4b0e-a880-f5e43b863824",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "400f4be1-f8c0-47f2-a2e1-0d1a96c36d06",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Atack1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

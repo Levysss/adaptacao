@@ -216,16 +216,28 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 244514b8e84842b45a776ef08bb7085d, type: 3}
+    - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 3dc840e2-6b26-46f8-9981-cc8155ba6af5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionId
-      value: 0023af5c-acaa-412a-8f40-0b7e5105e74e
+      value: 0fbf0e81-392a-4935-8a60-b5d509f51eac
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Jogador/Movimento[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
       objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionName
-      value: Jogador/atirar[/Keyboard/space]
+      value: Jogador/Atirar[/Keyboard/numpad0]
       objectReference: {fileID: 0}
     - target: {fileID: 4907862502152743417, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
@@ -411,6 +423,7 @@ MonoBehaviour:
   bocaCanhao: {fileID: 8628426408518854381}
   jogando: 0
   minhaBala: {fileID: 2242362525013703941, guid: 35a0533e2f5cb524ea2bece58f129df7, type: 3}
+  balaAtiva: {fileID: 0}
   mira: {fileID: 4659410101945148854}
   direcao: {x: 0, y: 0}
   jogou: 0

@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     private bool seguindoBala = false;  
     float deley = 3;
     private bool podeAtirar = false;
+    private bool balaExiste = false;
+    
 
     void Start()
     {
@@ -38,16 +40,24 @@ public class GameController : MonoBehaviour
     {
         if (seguindoBala && minhaBala != null)
         {
+            balaExiste = true;
             // Segue a bala se ela ainda existir
             can.transform.position = new Vector3(minhaBala.transform.position.x, minhaBala.transform.position.y, -5);
         }
         else
         {
-            // Se a bala for destruída, volta a seguir o jogador
-            seguindoBala = false;
+
+            if (balaExiste)
+            {
+                balaExiste = false;
+                seguindoBala = false;
+                StartCoroutine(deleyTroca()); 
+            }
+
             seguirPlayer();
         }
     }
+    
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -56,30 +66,35 @@ public class GameController : MonoBehaviour
             if (p1.jogando)
             {
                 p1.setAtirar();
-                minhaBala = p1.GetBala();  
-                seguindoBala = true;  
+                minhaBala = p1.GetBala();
                 trocarJogador();
+                seguindoBala = true;  
+                
             }
             else if (p2.jogando)
             {
                 p2.setAtirar();
-                minhaBala = p2.GetBala();  
-                seguindoBala = true;  
+                minhaBala = p2.GetBala();
                 trocarJogador();
+                seguindoBala = true;  
+                
             }
         }
     }
 
     void seguirPlayer()
     {
+        
         if (p1.jogando)
         {
+            
             vida1.text = "Vida: " + p1.vida;
             vida2.text = " ";
             can.transform.position = new Vector3(p1.canhao.transform.position.x + 15, p1.canhao.transform.position.y, -20);
         }
         else if (p2.jogando)
         {
+            
             vida2.text = "Vida: " + p2.vida;
             vida1.text = " ";
             can.transform.position = new Vector3(p2.canhao.transform.position.x - 15, p2.canhao.transform.position.y, -20);
@@ -88,6 +103,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator deleyTroca()
     {
+        
         podeAtirar = false;
         float tempoRestante = deley;
         while (tempoRestante > 0)
@@ -101,8 +117,9 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         contagem.text = "";
         podeAtirar = true;
+        
     }
-
+    
     void trocarJogador()
     {
         if (p1.jogando)
@@ -115,7 +132,10 @@ public class GameController : MonoBehaviour
             p2.jogando = false;
             p1.jogando = true;
         }
+        
+        
+        
 
-        StartCoroutine(deleyTroca());
+        
     }
 }
