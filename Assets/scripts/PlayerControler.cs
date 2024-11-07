@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControler : MonoBehaviour
 {
-    public int vida = 20;
+    public int vida = 100;
     private Rigidbody2D rb;
 
     public GameObject roda1;
@@ -21,7 +21,10 @@ public class PlayerControler : MonoBehaviour
     public GameObject mira;
     public Vector2 direcao;
     private float energia = 1;
-    private float gazoza = 20;
+    private float gazoza = 60;
+
+    private BalaController balaController;
+    
     
 
 
@@ -42,12 +45,13 @@ public class PlayerControler : MonoBehaviour
     }
     public void setAtirar()
     {
-        gazoza = 20;
+        gazoza = 60;
         energia = 1;
         if (jogando && !jogou)
         {
             
-            balaAtiva = Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);  
+            balaAtiva = Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);
+            balaController = balaAtiva.GetComponentInParent<BalaController>();
         }
         
     }
@@ -63,23 +67,10 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (jogando)
+        if (GameController.GetInstance().balaExiste == false) 
         {
-
-            if (movimento.x != 0)
-            {
-                gazoza -=movimento.x;
-                if(gazoza <= 0) 
-                {
-                    energia = 0;
-                }
-            }
-
-
-            Vector3 movie = new Vector3(movimento.x, 0, 0) * Time.fixedDeltaTime * deslocamento*energia;
-            transform.Translate(movie);
+            movimentacao();
         }
-        
         
     }
 
@@ -87,50 +78,67 @@ public class PlayerControler : MonoBehaviour
         
     {
         rb = GetComponent<Rigidbody2D>();
-
+        
          
 
 
         
     }
 
-    private void Update()
+    
+    private void movimentacao() 
     {
-        
 
-        
-        if (jogando == false)
+        if (jogando)
         {
-            
-            mira.SetActive(false);
 
-        }
-        else
-        {
-            roda1.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime *energia);
+            if (movimento.x != 0)
+            {
+                if (movimento.x > 0)
+                {
+                    gazoza -= movimento.x;
+                }
+                else if (movimento.x < 0)
+                {
+                    gazoza -= -movimento.x;
+                }
+
+                if (gazoza <= 0)
+                {
+                    energia = 0;
+                }
+            }
+
+            Vector3 movie = new Vector3(movimento.x, 0, 0) * Time.fixedDeltaTime * deslocamento * energia;
+            transform.Translate(movie);
+            roda1.transform.Rotate(0, 0, -movimento.x * 150 * Time.fixedDeltaTime * energia);
 
 
-            roda2.transform.Rotate(0, 0, -movimento.x * 150 * Time.deltaTime * energia);
+            roda2.transform.Rotate(0, 0, -movimento.x * 150 * Time.fixedDeltaTime * energia);
             direcao = mira.transform.position;
 
             controleCanhao();
             mira.SetActive(true);
-        }
-        
 
-        
+        }
+        else if (jogando == false)
+        {
+            mira.SetActive(false);
+        }
 
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("rio"))
         {
             vida = -99999999;
         }
-        vida -= 5;
+        //Debug.Log(balaController.dano);
+        vida -= balaController.dano;
         if(vida <= 0)
         {
-            //Destroy(gameObject);
+           
             SceneManager.LoadScene("Game");
         }
     }

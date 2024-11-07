@@ -5,6 +5,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
+    private static GameController instace;
     public PlayerControler p1;
     public PlayerControler p2;
     public GameObject can;  
@@ -16,8 +17,17 @@ public class GameController : MonoBehaviour
     private bool seguindoBala = false;  
     float deley = 3;
     private bool podeAtirar = false;
-    private bool balaExiste = false;
-    
+    public bool balaExiste = false;
+    private float tempoParaAnimacao;
+
+    private void Awake()
+    {
+        instace = this;
+    }
+    public static GameController GetInstance() 
+    {
+        return instace; 
+    }
 
     void Start()
     {
@@ -40,9 +50,10 @@ public class GameController : MonoBehaviour
     {
         if (seguindoBala && minhaBala != null)
         {
+            tempoParaAnimacao = 2;
             balaExiste = true;
             // Segue a bala se ela ainda existir
-            can.transform.position = new Vector3(minhaBala.transform.position.x, minhaBala.transform.position.y, -5);
+            can.transform.position = new Vector3(minhaBala.transform.position.x, minhaBala.transform.position.y, -15);
         }
         else
         {
@@ -51,17 +62,24 @@ public class GameController : MonoBehaviour
             {
                 balaExiste = false;
                 seguindoBala = false;
-                StartCoroutine(deleyTroca()); 
+                StartCoroutine(deleyTroca());
             }
+            if (tempoParaAnimacao <= 0)
+            {
+                
+                seguirPlayer();
+                
+            }
+            tempoParaAnimacao -= Time.deltaTime;
 
-            seguirPlayer();
+            
         }
     }
     
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed && podeAtirar)
+        if (context.performed && podeAtirar && balaExiste == false)
         {
             if (p1.jogando)
             {
@@ -90,14 +108,14 @@ public class GameController : MonoBehaviour
             
             vida1.text = "Vida: " + p1.vida;
             vida2.text = " ";
-            can.transform.position = new Vector3(p1.canhao.transform.position.x + 15, p1.canhao.transform.position.y, -20);
+            can.transform.position = new Vector3(p1.canhao.transform.position.x - 2, p1.canhao.transform.position.y, -15);
         }
         else if (p2.jogando)
         {
             
             vida2.text = "Vida: " + p2.vida;
             vida1.text = " ";
-            can.transform.position = new Vector3(p2.canhao.transform.position.x - 15, p2.canhao.transform.position.y, -20);
+            can.transform.position = new Vector3(p2.canhao.transform.position.x + 2, p2.canhao.transform.position.y, -15);
         }
     }
 
@@ -132,9 +150,6 @@ public class GameController : MonoBehaviour
             p2.jogando = false;
             p1.jogando = true;
         }
-        
-        
-        
 
         
     }

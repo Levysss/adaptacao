@@ -5,9 +5,13 @@ using UnityEngine;
 public class BalaController : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float speed = 35;
+    private float speed = 45;
     private Rigidbody2D myRb;
     public Vector3 minhaPosicao;
+    public int dano;
+    public bool colidiu = false;
+    public GameObject explosao;
+
 
 
     void Start()
@@ -18,6 +22,12 @@ public class BalaController : MonoBehaviour
     private void Update()
     {
         minhaPosicao = transform.position;
+        if (minhaPosicao.y > dano)
+        {
+            //Debug.Log(dano);
+            dano = (int)minhaPosicao.y;
+        }
+
     }
 
     // Update is called once per frame
@@ -25,8 +35,12 @@ public class BalaController : MonoBehaviour
     {
         transform.Translate(transform.up * speed * Time.fixedDeltaTime, Space.World);
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Instantiate(explosao, minhaPosicao, Quaternion.identity);
         Destroy(gameObject);
+        colidiu = true;
+        
     }
 }

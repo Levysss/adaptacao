@@ -10,6 +10,7 @@ TagManager:
   - BalaInimigoEstopin
   - chao
   - rio
+  - Castelo
   layers:
   - Default
   - TransparentFX
@@ -17,11 +18,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Icones
+  - Castelo
+  - Back
+  - roda
+  - Bala
   - 
   - 
   - 
