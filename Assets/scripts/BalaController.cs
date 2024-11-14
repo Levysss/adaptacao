@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BalaController : MonoBehaviour
@@ -9,6 +10,7 @@ public class BalaController : MonoBehaviour
     private Rigidbody2D myRb;
     public Vector3 minhaPosicao;
     public int dano;
+    public GameObject danoText;
     public bool colidiu = false;
     public GameObject explosao;
 
@@ -39,6 +41,13 @@ public class BalaController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(explosao, minhaPosicao, Quaternion.identity);
+        if (collision.CompareTag("Castelo"))
+        {
+            var danoC = danoText.GetComponent<FeedbackDanoController>();
+            danoC.texto.text = dano.ToString();
+            Instantiate(danoText, minhaPosicao + new Vector3(0, 2, 0), Quaternion.identity);
+        }
+        
         Destroy(gameObject);
         colidiu = true;
         

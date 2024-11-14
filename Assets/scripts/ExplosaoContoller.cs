@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExplosaoContoller : MonoBehaviour
 {
     private float tempoexposao= 1;
+    public bool onColision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,4 +22,9 @@ public class ExplosaoContoller : MonoBehaviour
         }
         tempoexposao -= Time.deltaTime;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        onColision = true;
+    }
+
 }
