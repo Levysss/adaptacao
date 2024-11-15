@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: 49cfa384152ec9f4e83e9343e8be0570
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Drabor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 402
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48.14453, y: 149}
+        - {x: -63.7207, y: 149}
+        - {x: -87.79297, y: 136.90567}
+        - {x: -201, y: -17.339624}
+        - {x: -201, y: -95.169815}
+        - {x: -168.50586, y: -148.9434}
+        - {x: 191.16211, y: -148.9434}
+        - {x: 201, y: -120.64151}
+        - {x: 201, y: -82.43397}
+        - {x: 186.99377, y: 8.418976}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f34d83ac762c274191a2a6b95e7d059
+      internalID: 890670412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drabor_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 129
+        width: 401
+        height: 320
+      alignment: 9
+      pivot: {x: 0.50273365, y: 0.4519204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 45.87207, y: 160}
+        - {x: -128.29785, y: 160}
+        - {x: -200.5, y: -23.122648}
+        - {x: -200.5, y: -150.48114}
+        - {x: -167.94629, y: -160}
+        - {x: 176.14551, y: -160}
+        - {x: 198.80176, y: -157.55661}
+        - {x: 200.5, y: -143.40567}
+        - {x: 200.5, y: -107.99396}
+        - {x: 182.94397, y: -90.0388}
+        - {x: 160.15625, y: 84.657166}
+      - - {x: -200.5, y: -122.17925}
+        - {x: -196.2666, y: -120.76416}
+        - {x: -196.2666, y: -116.518875}
+        - {x: -199.09863, y: -113.68869}
+        - {x: -200.5, y: -113.68869}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dec2c17d2368a47bb1184ef33bc595
+      internalID: -1940511115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drabor_2
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 127
+        width: 400
+        height: 283
+      alignment: 9
+      pivot: {x: 0.4972595, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 121.48046, y: 141.5}
+        - {x: -85.25781, y: 141.5}
+        - {x: -199.95508, y: 52.707546}
+        - {x: -199.95508, y: -115.68868}
+        - {x: -161.72266, y: -141.16039}
+        - {x: 166.79297, y: -141.16039}
+        - {x: 178.1211, y: -131.25471}
+        - {x: 200, y: -109.898895}
+        - {x: 200, y: -95.29587}
+        - {x: 200, y: -66.30797}
+        - {x: 187.84656, y: -28.647644}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a90820f14a36c143bca9849af1e0911
+      internalID: -1843316672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drabor_3
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 127
+        width: 401
+        height: 283
+      alignment: 9
+      pivot: {x: 0.50231963, y: 0.49011445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -200.10347, y: -90.21699}
+        - {x: -178.86324, y: -141.16039}
+        - {x: 172.30862, y: -141.16039}
+        - {x: 200.5, y: -131.25471}
+        - {x: 200.5, y: -75.5}
+        - {x: 190.5, y: -52.5}
+        - {x: 169.4766, y: 73.93396}
+        - {x: 83.09965, y: 141.5}
+        - {x: -81.15816, y: 141.5}
+        - {x: -200.10347, y: 61.198112}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf69bc271868a9448860d48ba6ba549c
+      internalID: 1518829372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drabor_4
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 127
+        width: 402
+        height: 283
+      alignment: 9
+      pivot: {x: 0.50231934, y: 0.47363862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c0b4f05d2567f46a58e0ea1372bcd7
+      internalID: -1649579822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drabor_5
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 127
+        width: 402
+        height: 299
+      alignment: 9
+      pivot: {x: 0.50231993, y: 0.4376234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d9d193ac7f30f408fdaa11985454e3
+      internalID: -1743100133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drabor_6
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 129
+        width: 402
+        height: 320
+      alignment: 9
+      pivot: {x: 0.50730723, y: 0.395964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61e2430b6c8fcf4591415b0491bd3b3
+      internalID: 207586743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Drabor_0: 890670412
+      Drabor_1: -1940511115
+      Drabor_2: -1843316672
+      Drabor_3: 1518829372
+      Drabor_4: -1649579822
+      Drabor_5: -1743100133
+      Drabor_6: 207586743
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
