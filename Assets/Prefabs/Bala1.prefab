@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f12d7e15a94b8143bf5f60923d36ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minhaPosicao: {x: 0, y: 0, z: 0}
+  nome: BalaNormal
   dano: 0
+  multiplicador: 1
   danoText: {fileID: 1671310031412996126, guid: 2d2f10d87b7a3d14989b674d9cdcb8fd, type: 3}
   colidiu: 0
   explosao: {fileID: 5698024626043248492, guid: 5caa6f64c41b43f468b5194eafc9ddbb, type: 3}

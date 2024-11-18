@@ -6,10 +6,12 @@ using UnityEngine;
 public class BalaController : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string nome;
     private float speed = 45;
     private Rigidbody2D myRb;
-    public Vector3 minhaPosicao;
-    public int dano;
+    private Vector3 minhaPosicao;
+    public float dano;
+    [SerializeField]private float multiplicador =1;
     public GameObject danoText;
     public bool colidiu = false;
     public GameObject explosao;
@@ -18,6 +20,10 @@ public class BalaController : MonoBehaviour
 
     void Start()
     {
+        if(nome == "MegaBala")
+        {
+            speed = 35;
+        }
         myRb = GetComponent<Rigidbody2D>();
 
     }
@@ -27,7 +33,7 @@ public class BalaController : MonoBehaviour
         if (minhaPosicao.y > dano)
         {
             //Debug.Log(dano);
-            dano = (int)minhaPosicao.y;
+            dano = (int)minhaPosicao.y * multiplicador;
         }
 
     }
@@ -44,11 +50,15 @@ public class BalaController : MonoBehaviour
         if (collision.CompareTag("Castelo"))
         {
             var danoC = danoText.GetComponent<FeedbackDanoController>();
-            danoC.texto.text = dano.ToString();
+            int danoR =(int) dano;
+            //collision.gameObject.GetComponent<PlayerControler>().ReceberDano(danoR);
+            danoC.texto.text = danoR.ToString();
             Instantiate(danoText, minhaPosicao + new Vector3(0, 2, 0), Quaternion.identity);
         }
         
         Destroy(gameObject);
+        
+        
         colidiu = true;
         
     }

@@ -2714,6 +2714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: minhaBala
+      value: 
+      objectReference: {fileID: 5410282054563276965, guid: 929980e55366ecd4eab0160b3d489cd8, type: 3}
     - target: {fileID: 8887431389882850009, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_Name
       value: Castelo 1

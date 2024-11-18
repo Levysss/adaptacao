@@ -15,8 +15,8 @@ public class PlayerControler : MonoBehaviour
     public GameObject bocaCanhao;
 
     public bool jogando;
-
-    public GameObject minhaBala;
+    public string nomeBala = "normal";
+    public GameObject[] minhaBala;
     public GameObject balaAtiva;
     public GameObject mira;
     public Vector2 direcao;
@@ -24,9 +24,6 @@ public class PlayerControler : MonoBehaviour
     private float gazoza = 60;
 
     private BalaController balaController;
-    
-    
-
 
 
     public bool jogou;
@@ -50,7 +47,16 @@ public class PlayerControler : MonoBehaviour
         if (jogando && !jogou)
         {
             
-            balaAtiva = Instantiate(minhaBala, bocaCanhao.transform.position, canhao.transform.rotation);
+            if (nomeBala =="normal")
+            {
+                balaAtiva = Instantiate(minhaBala[0], bocaCanhao.transform.position, canhao.transform.rotation);
+            }
+            else if (nomeBala == "mega")
+            {
+                balaAtiva = Instantiate(minhaBala[1], bocaCanhao.transform.position, canhao.transform.rotation);
+                nomeBala = "normal";
+            }
+            
             balaController = balaAtiva.GetComponentInParent<BalaController>();
         }
         
@@ -135,12 +141,16 @@ public class PlayerControler : MonoBehaviour
             vida = -99999999;
         }
         //Debug.Log(balaController.dano);
-        vida -= balaController.dano;
+        vida -= (int)balaController.dano;
         if(vida <= 0)
         {
            
             SceneManager.LoadScene("Game");
         }
+    }
+    public void ReceberDano(int dano)
+    {
+        vida -= dano;
     }
 
     void controleCanhao()

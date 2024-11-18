@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9104888271911980865}
   m_Layer: 0
   m_Name: Explosao
-  m_TagString: Untagged
+  m_TagString: Explosao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72ab313b4357b54cb64b523930e4015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onColision: 0
 --- !u!61 &9104888271911980865
 BoxCollider2D:
   m_ObjectHideFlags: 0
