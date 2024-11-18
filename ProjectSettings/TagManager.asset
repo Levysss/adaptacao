@@ -11,6 +11,7 @@ TagManager:
   - chao
   - rio
   - Castelo
+  - Explosao
   layers:
   - Default
   - TransparentFX

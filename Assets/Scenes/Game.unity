@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 174743335}
   m_Layer: 0
   m_Name: Paredes
-  m_TagString: Untagged
+  m_TagString: rio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -999,6 +999,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &548136593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6823310424090795374, guid: 0f442f9c59fcfd74c8886fb8c44846ef, type: 3}
+  m_PrefabInstance: {fileID: 566663181358878957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &548136595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548136593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab35299716cd534f825afbdac9198dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &548136596
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548136593}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 35.15, y: 29.78}
+  m_EdgeRadius: 0
 --- !u!1 &666827146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2644,7 +2706,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6823310424090795374, guid: 0f442f9c59fcfd74c8886fb8c44846ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 548136596}
+    - targetCorrespondingSourceObject: {fileID: 6823310424090795374, guid: 0f442f9c59fcfd74c8886fb8c44846ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 548136595}
   m_SourcePrefab: {fileID: 100100000, guid: 0f442f9c59fcfd74c8886fb8c44846ef, type: 3}
 --- !u!1001 &1167799254080889626
 PrefabInstance:
@@ -2718,6 +2786,18 @@ PrefabInstance:
       propertyPath: minhaBala
       value: 
       objectReference: {fileID: 5410282054563276965, guid: 929980e55366ecd4eab0160b3d489cd8, type: 3}
+    - target: {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: minhaBala.Array.data[0]
+      value: 
+      objectReference: {fileID: 2242362525013703941, guid: 0b949f251da6f9742a1032e95d21b61f, type: 3}
+    - target: {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: minhaBala.Array.data[1]
+      value: 
+      objectReference: {fileID: 5410282054563276965, guid: 929980e55366ecd4eab0160b3d489cd8, type: 3}
+    - target: {fileID: 7147156396193097885, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
+      propertyPath: minhaBala.Array.data[2]
+      value: 
+      objectReference: {fileID: 450556383553989001, guid: 15ccd2e7f67d7534da9355d13aac4035, type: 3}
     - target: {fileID: 8887431389882850009, guid: e411ddb9f8f4d2f48b46e76bc1139250, type: 3}
       propertyPath: m_Name
       value: Castelo 1
@@ -2799,6 +2879,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8776447344493248530, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: minhaBala.Array.data[0]
+      value: 
+      objectReference: {fileID: 2242362525013703941, guid: 35a0533e2f5cb524ea2bece58f129df7, type: 3}
+    - target: {fileID: 8776447344493248530, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: minhaBala.Array.data[1]
+      value: 
+      objectReference: {fileID: 6268000672317442620, guid: 5acc42ee361875b46babc8a66da2ae58, type: 3}
+    - target: {fileID: 8776447344493248530, guid: a03ebc4964d67434b851090cba429182, type: 3}
+      propertyPath: minhaBala.Array.data[2]
+      value: 
+      objectReference: {fileID: 8832675311394504758, guid: ee06430dac2bea4408ba3fa3ef9f4d2d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
