@@ -14,6 +14,7 @@ public class BalaController : MonoBehaviour
     [SerializeField]private float multiplicador =1;
     public GameObject danoText;
     public bool colidiu = false;
+    private bool gost = false;
     public GameObject explosao;
 
 
@@ -23,6 +24,11 @@ public class BalaController : MonoBehaviour
         if(nome == "MegaBala")
         {
             speed = 35;
+        }
+        if(nome == "Fantasma")
+        {
+            speed = 55;
+            gost = true;
         }
         myRb = GetComponent<Rigidbody2D>();
 
@@ -43,20 +49,35 @@ public class BalaController : MonoBehaviour
     {
         transform.Translate(transform.up * speed * Time.fixedDeltaTime, Space.World);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(explosao, minhaPosicao, Quaternion.identity);
+
         if (collision.CompareTag("Castelo"))
         {
             var danoC = danoText.GetComponent<FeedbackDanoController>();
-            int danoR =(int) dano;
+            int danoR = (int)dano;
             //collision.gameObject.GetComponent<PlayerControler>().ReceberDano(danoR);
             danoC.texto.text = danoR.ToString();
             Instantiate(danoText, minhaPosicao + new Vector3(0, 2, 0), Quaternion.identity);
         }
+
+
         
-        Destroy(gameObject);
+        if (!gost)
+        {
+            Instantiate(explosao, minhaPosicao, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else
+        {
+            if (collision.CompareTag("Castelo")||collision.CompareTag("rio"))
+            {
+                Instantiate(explosao, minhaPosicao, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
+        
         
         
         colidiu = true;

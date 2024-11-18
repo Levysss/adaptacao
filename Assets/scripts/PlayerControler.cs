@@ -55,6 +55,10 @@ public class PlayerControler : MonoBehaviour
             {
                 balaAtiva = Instantiate(minhaBala[1], bocaCanhao.transform.position, canhao.transform.rotation);
                 nomeBala = "normal";
+            }else if (nomeBala == "gost")
+            {
+                balaAtiva = Instantiate(minhaBala[2], bocaCanhao.transform.position, canhao.transform.rotation);
+                nomeBala = "normal";
             }
             
             balaController = balaAtiva.GetComponentInParent<BalaController>();
