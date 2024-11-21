@@ -10,8 +10,8 @@ public class BalaController : MonoBehaviour
     private float speed = 45;
     private Rigidbody2D myRb;
     private Vector3 minhaPosicao;
-    public float dano;
-    [SerializeField]private float multiplicador =1;
+    public int dano;
+    [SerializeField]private int multiplicador =1;
     public GameObject danoText;
     public bool colidiu = false;
     private bool gost = false;
@@ -38,8 +38,9 @@ public class BalaController : MonoBehaviour
         minhaPosicao = transform.position;
         if (minhaPosicao.y > dano)
         {
-            //Debug.Log(dano);
-            dano = (int)minhaPosicao.y * multiplicador;
+            int danoR = (int)minhaPosicao.y;
+            dano = danoR * multiplicador;
+            Debug.Log(dano);
         }
 
     }
@@ -56,9 +57,9 @@ public class BalaController : MonoBehaviour
         if (collision.CompareTag("Castelo"))
         {
             var danoC = danoText.GetComponent<FeedbackDanoController>();
-            int danoR = (int)dano;
+            
             //collision.gameObject.GetComponent<PlayerControler>().ReceberDano(danoR);
-            danoC.texto.text = danoR.ToString();
+            danoC.texto.text = dano.ToString();
             Instantiate(danoText, minhaPosicao + new Vector3(0, 2, 0), Quaternion.identity);
         }
 

@@ -36,14 +36,34 @@ public class GameController : MonoBehaviour
         {
             p2.jogando = true;
             p1.jogando = false;
+            
         }
         else
         {
             p1.jogando = true;
             p2.jogando = false;
+            
+        }
+        podeAtirar = true;
+        AtirarPrimeiro();
+        StartCoroutine(deleyTroca());
+    }
+    void AtirarPrimeiro()
+    {
+        if (p1.jogando)
+        {
+            p1.setAtirar();
+            minhaBala = p1.GetBala();
+            seguindoBala = true;
+        }
+        else if (p2.jogando)
+        {
+            p2.setAtirar();
+            minhaBala = p2.GetBala();
+            seguindoBala = true;
         }
 
-        StartCoroutine(deleyTroca());
+        trocarJogador(); // Troca de jogador após o tiro
     }
 
     void Update()

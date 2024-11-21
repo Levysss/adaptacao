@@ -19,6 +19,8 @@ public class PlayerControler : MonoBehaviour
     public GameObject[] minhaBala;
     public GameObject balaAtiva;
     public GameObject mira;
+    public GameObject pow;
+    public GameObject fonte;
     public Vector2 direcao;
     private float energia = 1;
     private float gazoza = 60;
@@ -42,6 +44,8 @@ public class PlayerControler : MonoBehaviour
     }
     public void setAtirar()
     {
+        var posicaoExplosao =  fonte.transform.position;
+        Instantiate(pow,posicaoExplosao, Quaternion.identity);
         gazoza = 60;
         energia = 1;
         if (jogando && !jogou)
@@ -61,9 +65,9 @@ public class PlayerControler : MonoBehaviour
                 nomeBala = "normal";
             }
             
-            balaController = balaAtiva.GetComponentInParent<BalaController>();
+
         }
-        
+        balaController = balaAtiva.GetComponent<BalaController>();
     }
     public BalaController GetBala()
     {
@@ -145,18 +149,20 @@ public class PlayerControler : MonoBehaviour
             vida = -99999999;
         }
         //Debug.Log(balaController.dano);
-        vida -= (int)balaController.dano;
+        BalaController bala = collision.GetComponent<BalaController>();
+        vida -= bala.dano;
         if(vida <= 0)
         {
            
             SceneManager.LoadScene("Game");
         }
     }
+    /*
     public void ReceberDano(int dano)
     {
         vida -= dano;
     }
-
+    */
     void controleCanhao()
     {
         //nosso 90 graus e igual a 0 e nosso 0 graus é -0
