@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class GameController : MonoBehaviour
 {
@@ -12,14 +14,18 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI contagem;
     public TextMeshProUGUI vida1;
     public TextMeshProUGUI vida2;
-
+    public Slider barra1;
+    public Slider barra2;
     private BalaController minhaBala;  
     private bool seguindoBala = false;  
     float deley = 3;
     private bool podeAtirar = false;
     public bool balaExiste = false;
     private float tempoParaAnimacao;
-
+    private Vector2 moviCan;
+    public Animator item;
+    private bool mina= false;
+    private bool minaColidiu = false;
     private void Awake()
     {
         instace = this;
@@ -68,22 +74,43 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        vidaTempoReal();
+        itemAtual();
         if (seguindoBala && minhaBala != null)
         {
             tempoParaAnimacao = 2;
             balaExiste = true;
             // Segue a bala se ela ainda existir
             can.transform.position = new Vector3(minhaBala.transform.position.x, minhaBala.transform.position.y, -15);
+            if(minhaBala.nome == "mina")
+            {
+                
+                mina = true;
+                if (minhaBala.colidiu)
+                {
+                    
+                    minaColidiu = true;
+                    minhaBala = null;
+                }
+            }
         }
         else
         {
-
+            
+            
             if (balaExiste)
             {
                 balaExiste = false;
                 seguindoBala = false;
+                if (mina && minaColidiu)
+                {
+                    balaExiste = false;
+                    seguindoBala = false;
+                    StartCoroutine(deleyTroca());
+                }
                 StartCoroutine(deleyTroca());
             }
+            
             if (tempoParaAnimacao <= 0)
             {
                 
@@ -95,8 +122,11 @@ public class GameController : MonoBehaviour
             
         }
     }
-    
 
+    public void setDeslocamento(InputAction.CallbackContext valui)
+    {
+        moviCan = valui.ReadValue<Vector2>();
+    }
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed && podeAtirar && balaExiste == false)
@@ -119,24 +149,35 @@ public class GameController : MonoBehaviour
             }
         }
     }
+    void vidaTempoReal()
+    {
+        vida1.text = "" + p1.vida;
+        //vida2.text = " ";
+        barra1.value = p1.vida;
 
+        barra2.value = p2.vida;
+        vida2.text = "" + p2.vida;
+    }
     void seguirPlayer()
     {
-        
+        //Debug.Log(moviCan.x);
+        float offset = 2;
+        offset += moviCan.x * 35;
+        Vector3 destino= Vector3.zero;
         if (p1.jogando)
         {
             
-            vida1.text = "Vida: " + p1.vida;
-            vida2.text = " ";
-            can.transform.position = new Vector3(p1.canhao.transform.position.x - 2, p1.canhao.transform.position.y, -15);
+            
+            
+            destino = new Vector3(p1.canhao.transform.position.x + offset, p1.canhao.transform.position.y, -15);
         }
         else if (p2.jogando)
         {
             
-            vida2.text = "Vida: " + p2.vida;
-            vida1.text = " ";
-            can.transform.position = new Vector3(p2.canhao.transform.position.x + 2, p2.canhao.transform.position.y, -15);
+            //vida1.text = " ";
+            destino = new Vector3(p2.canhao.transform.position.x + offset, p2.canhao.transform.position.y, -15);
         }
+        can.transform.position = Vector3.Lerp(can.transform.position, destino, Time.deltaTime);
     }
 
     IEnumerator deleyTroca()
@@ -172,5 +213,46 @@ public class GameController : MonoBehaviour
         }
 
         
+    }
+    void itemAtual()
+    {
+        if (p1.jogando)
+        {
+            switch (p1.nomeBala)
+            {
+                case "normal":
+                    item.Play("normal");
+                    break;
+                case "mega":
+                    item.Play("mega");
+                    break;
+                case "gost":
+                    item.Play("gost");
+                    break;
+                case "mina":
+                    item.Play("mina");
+                    break;
+
+            }
+        }
+        else if (p2.jogando)
+        {
+            switch (p2.nomeBala)
+            {
+                case "normal":
+                    item.Play("normal");
+                    break;
+                case "mega":
+                    item.Play("mega");
+                    break;
+                case "gost":
+                    item.Play("gost");
+                    break;
+                case "mina":
+                    item.Play("mina");
+                    break;
+
+            }
+        }
     }
 }

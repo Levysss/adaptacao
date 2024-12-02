@@ -44,6 +44,15 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoviCan"",
+                    ""type"": ""Value"",
+                    ""id"": ""07c2e662-1610-484c-be77-ad14674a1025"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,39 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
                     ""action"": ""Atack2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""QE"",
+                    ""id"": ""e333af4f-9413-44dc-8030-3b1e3845aedd"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoviCan"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""679134e2-17cf-4e5c-8a04-84ff42ed82f3"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoviCan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""addb15e3-afb6-4457-adb5-06b49aad4bf5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoviCan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -78,6 +120,7 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_Atack1 = m_Game.FindAction("Atack1", throwIfNotFound: true);
         m_Game_Atack2 = m_Game.FindAction("Atack2", throwIfNotFound: true);
+        m_Game_MoviCan = m_Game.FindAction("MoviCan", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,12 +184,14 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
     private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
     private readonly InputAction m_Game_Atack1;
     private readonly InputAction m_Game_Atack2;
+    private readonly InputAction m_Game_MoviCan;
     public struct GameActions
     {
         private @GameControler m_Wrapper;
         public GameActions(@GameControler wrapper) { m_Wrapper = wrapper; }
         public InputAction @Atack1 => m_Wrapper.m_Game_Atack1;
         public InputAction @Atack2 => m_Wrapper.m_Game_Atack2;
+        public InputAction @MoviCan => m_Wrapper.m_Game_MoviCan;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -162,6 +207,9 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
             @Atack2.started += instance.OnAtack2;
             @Atack2.performed += instance.OnAtack2;
             @Atack2.canceled += instance.OnAtack2;
+            @MoviCan.started += instance.OnMoviCan;
+            @MoviCan.performed += instance.OnMoviCan;
+            @MoviCan.canceled += instance.OnMoviCan;
         }
 
         private void UnregisterCallbacks(IGameActions instance)
@@ -172,6 +220,9 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
             @Atack2.started -= instance.OnAtack2;
             @Atack2.performed -= instance.OnAtack2;
             @Atack2.canceled -= instance.OnAtack2;
+            @MoviCan.started -= instance.OnMoviCan;
+            @MoviCan.performed -= instance.OnMoviCan;
+            @MoviCan.canceled -= instance.OnMoviCan;
         }
 
         public void RemoveCallbacks(IGameActions instance)
@@ -193,5 +244,6 @@ public partial class @GameControler: IInputActionCollection2, IDisposable
     {
         void OnAtack1(InputAction.CallbackContext context);
         void OnAtack2(InputAction.CallbackContext context);
+        void OnMoviCan(InputAction.CallbackContext context);
     }
 }

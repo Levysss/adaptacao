@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268721197831604664, guid: 0b949f251da6f9742a1032e95d21b61f, type: 3}
       propertyPath: multiplicador
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7162981117772099726, guid: 0b949f251da6f9742a1032e95d21b61f, type: 3}
       propertyPath: m_LocalScale.x

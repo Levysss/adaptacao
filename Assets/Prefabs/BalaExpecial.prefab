@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: MegaBala
-  dano: 0
+  dano: 2
   multiplicador: 2
   danoText: {fileID: 1671310031412996126, guid: 2d2f10d87b7a3d14989b674d9cdcb8fd, type: 3}
   colidiu: 0
@@ -237,7 +237,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

@@ -23,11 +23,16 @@ public class BalaController : MonoBehaviour
     {
         if(nome == "MegaBala")
         {
-            speed = 35;
+            speed = 55;
         }
         if(nome == "Fantasma")
         {
             speed = 55;
+            gost = true;
+        }
+        if (nome == "mina")
+        {
+            speed = 45;
             gost = true;
         }
         myRb = GetComponent<Rigidbody2D>();
@@ -40,7 +45,7 @@ public class BalaController : MonoBehaviour
         {
             int danoR = (int)minhaPosicao.y;
             dano = danoR * multiplicador;
-            Debug.Log(dano);
+            //Debug.Log(dano);
         }
 
     }
@@ -48,7 +53,11 @@ public class BalaController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(transform.up * speed * Time.fixedDeltaTime, Space.World);
+        if (colidiu == false||nome == "Fantasma")
+        {
+            transform.Translate(transform.up * speed * Time.fixedDeltaTime, Space.World);
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,10 +71,26 @@ public class BalaController : MonoBehaviour
             danoC.texto.text = dano.ToString();
             Instantiate(danoText, minhaPosicao + new Vector3(0, 2, 0), Quaternion.identity);
         }
-
+        bool mina=false;
+        if (nome == "mina")
+        {
+            mina = true;
+            if (collision.CompareTag("Castelo")|| collision.CompareTag("rio"))
+            {
+                Instantiate(explosao, minhaPosicao, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            else
+            {
+                
+                transform.position = minhaPosicao;
+                myRb.bodyType = RigidbodyType2D.Static;
+                colidiu = true;
+            }
+        }
 
         
-        if (!gost)
+        if (!gost&&!mina)
         {
             Instantiate(explosao, minhaPosicao, Quaternion.identity);
             Destroy(gameObject);

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Dropador : MonoBehaviour
 {
+    public GameObject box;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject,22);
     }
 
     // Update is called once per frame
@@ -15,8 +16,10 @@ public class Dropador : MonoBehaviour
     {
         transform.position += Vector3.right *Time.deltaTime*5;
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
+        Instantiate(box,transform.position,Quaternion.identity);
     }
 }

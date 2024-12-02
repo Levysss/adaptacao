@@ -12,6 +12,8 @@ TagManager:
   - rio
   - Castelo
   - Explosao
+  - Drabor
+  - box
   layers:
   - Default
   - TransparentFX
@@ -24,9 +26,9 @@ TagManager:
   - Back
   - roda
   - Bala
-  - 
-  - 
-  - 
+  - mina
+  - droper
+  - Particulas
   - 
   - 
   - 

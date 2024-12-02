@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5185813264104402899}
   - component: {fileID: 3227650972202136527}
   - component: {fileID: -4973873304980092785}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Droper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4038e4b799b8ae443b9a00e6d0ffb384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  box: {fileID: 5325177849327857400, guid: 5c9c5726b7fa65f498590ddb1a68e0e5, type: 3}
 --- !u!61 &-4973873304980092785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ GameObject:
   - component: {fileID: 3769584539167784260}
   - component: {fileID: 1741914161201869560}
   - component: {fileID: 7009765092576722183}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: dropador
   m_TagString: Untagged
   m_Icon: {fileID: 0}

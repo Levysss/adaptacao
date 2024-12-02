@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoviCan",
+                    "type": "Value",
+                    "id": "07c2e662-1610-484c-be77-ad14674a1025",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -46,6 +55,39 @@
                     "action": "Atack2",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "QE",
+                    "id": "e333af4f-9413-44dc-8030-3b1e3845aedd",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoviCan",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "679134e2-17cf-4e5c-8a04-84ff42ed82f3",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoviCan",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "addb15e3-afb6-4457-adb5-06b49aad4bf5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoviCan",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

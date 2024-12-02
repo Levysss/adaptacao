@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -62,6 +63,11 @@ public class PlayerControler : MonoBehaviour
             }else if (nomeBala == "gost")
             {
                 balaAtiva = Instantiate(minhaBala[2], bocaCanhao.transform.position, canhao.transform.rotation);
+                nomeBala = "normal";
+            }
+            else if (nomeBala == "mina")
+            {
+                balaAtiva = Instantiate(minhaBala[3], bocaCanhao.transform.position, canhao.transform.rotation);
                 nomeBala = "normal";
             }
             
@@ -148,15 +154,29 @@ public class PlayerControler : MonoBehaviour
         {
             vida = -99999999;
         }
-        //Debug.Log(balaController.dano);
-        BalaController bala = collision.GetComponent<BalaController>();
-        vida -= bala.dano;
-        if(vida <= 0)
+        if (collision.CompareTag("box"))
         {
-           
+            Box box = collision.GetComponent<Box>();
+            Debug.Log(box.getConteudo());
+            nomeBala = box.getConteudo();
+        }
+        //Debug.Log(balaController.dano);
+        if (collision.CompareTag("BalaInimigoEstopin") || collision.CompareTag("BalaEstopin"))
+        {
+            BalaController bala = collision.GetComponent<BalaController>();
+
+            vida -= bala.dano;
+            
+        }
+        if (vida <= 0)
+        {
+
             SceneManager.LoadScene("Game");
         }
+
+
     }
+    
     /*
     public void ReceberDano(int dano)
     {
